@@ -7,17 +7,36 @@
 //
 
 import UIKit
+import CoreData
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
+    let context: NSManagedObjectContext? = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    var frc: NSFetchedResultsController = NSFetchedResultsController()
+    
+    func getFetchedResultsController() ->NSFetchedResultsController{
+        frc = NSFetchedResultsController(fetchRequest: listFetchRequest(), managedObjectContext: context!, sectionNameKeyPath: nil, cacheName: nil)
+        return frc
+    }
+    
+    func listFetchRequest() -> NSFetchRequest{
+        let fetchRequest = NSFetchRequest(entityName: "List")
+        let sortDescriptor = NSSortDescriptor(key: "item", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        frc = getFetchedResultsController()
+        frc.delegate = self
+        frc.performFetch(nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,24 +49,35 @@ class TableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        let numberOfRowInsection = frc.sections?.count
+        return numberOfRowInsection!
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        let numberOfSections = frc.sections?[section].numberOfObjects
+        return numberOfSections!
+        
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
 
+        let list = frc.objectAtIndexPath(indexPath) as! List
+        cell.textLabel?.text = list.item
+        var note = list.note
+        var qty = list.qty
+        
+        cell.detailTextLabel?.text = "Qty: \(qty) - Note: \(note)."
+        
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
