@@ -43,6 +43,17 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "edit" {
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let itemController: ViewController = segue.destinationViewController as! ViewController
+            let nItem: List = frc.objectAtIndexPath(indexPath!) as! List
+            itemController.nItem = nItem
+            
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -78,6 +89,7 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         return cell
     }
     
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -87,17 +99,15 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        
+        let managedObject: NSManagedObject = frc.objectAtIndexPath(indexPath) as! NSManagedObject
+        context?.deleteObject(managedObject)
+        context?.save(nil)
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
