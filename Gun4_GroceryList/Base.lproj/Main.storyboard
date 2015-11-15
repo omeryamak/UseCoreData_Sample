@@ -49,12 +49,65 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ndr-Ho-250">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="item name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-yb-NWH">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="95" width="307" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="item quantity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1SQ-7E-qWs">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="189" width="307" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="item note" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IUS-i3-LaC">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="40" y="142" width="307" height="30"/>
+                                </variation>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="OvQ-yb-NWH"/>
+                                <exclude reference="1SQ-7E-qWs"/>
+                                <exclude reference="IUS-i3-LaC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="OvQ-yb-NWH"/>
+                                <include reference="1SQ-7E-qWs"/>
+                                <include reference="IUS-i3-LaC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Add&amp;Edit" id="L2N-BK-6YS">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ptp-d5-bWX"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="i1v-cm-X0x"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ptp-d5-bWX">
+                            <connections>
+                                <action selector="cancelTapped:" destination="2S3-LG-eVX" id="yZH-VO-7za"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="i1v-cm-X0x">
+                            <connections>
+                                <action selector="saveTapped:" destination="2S3-LG-eVX" id="gKT-cJ-ONr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="entryItem" destination="OvQ-yb-NWH" id="ab8-HU-36A"/>
+                        <outlet property="entryNote" destination="IUS-i3-LaC" id="j3c-By-A76"/>
+                        <outlet property="entryQty" destination="1SQ-7E-qWs" id="Jbi-ad-xdI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qsX-Iw-hDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
