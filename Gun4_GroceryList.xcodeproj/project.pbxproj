@@ -15,6 +15,7 @@
 		17BE7E181BF8C683002A47F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BE7E161BF8C683002A47F2 /* LaunchScreen.xib */; };
 		17BE7E241BF8C683002A47F2 /* Gun4_GroceryListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE7E231BF8C683002A47F2 /* Gun4_GroceryListTests.swift */; };
 		17BE7E2E1BF8C965002A47F2 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE7E2D1BF8C965002A47F2 /* List.swift */; };
+		17BE7E301BF8D135002A47F2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE7E2F1BF8D135002A47F2 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		17BE7E221BF8C683002A47F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17BE7E231BF8C683002A47F2 /* Gun4_GroceryListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gun4_GroceryListTests.swift; sourceTree = "<group>"; };
 		17BE7E2D1BF8C965002A47F2 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		17BE7E2F1BF8D135002A47F2 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				17BE7E0A1BF8C683002A47F2 /* AppDelegate.swift */,
 				17BE7E0F1BF8C683002A47F2 /* ViewController.swift */,
+				17BE7E2F1BF8D135002A47F2 /* TableViewController.swift */,
 				17BE7E111BF8C683002A47F2 /* Main.storyboard */,
 				17BE7E141BF8C683002A47F2 /* Images.xcassets */,
 				17BE7E161BF8C683002A47F2 /* LaunchScreen.xib */,
@@ -221,6 +224,7 @@
 				17BE7E101BF8C683002A47F2 /* ViewController.swift in Sources */,
 				17BE7E2E1BF8C965002A47F2 /* List.swift in Sources */,
 				17BE7E0B1BF8C683002A47F2 /* AppDelegate.swift in Sources */,
+				17BE7E301BF8D135002A47F2 /* TableViewController.swift in Sources */,
 				17BE7E0E1BF8C683002A47F2 /* Gun4_GroceryList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

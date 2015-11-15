@@ -7,7 +7,7 @@
         <!--Table View Controller-->
         <scene sceneID="0U9-1c-GE8">
             <objects>
-                <tableViewController id="h3b-iU-qba" sceneMemberID="viewController">
+                <tableViewController id="h3b-iU-qba" customClass="TableViewController" customModule="Gun4_GroceryList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ye7-ks-5fm">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -17,6 +17,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jkg-0l-ZsF" id="yD1-Nn-KTe">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="2S3-LG-eVX" kind="show" identifier="edit" id="710-SV-SVJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -27,7 +30,7 @@
                     <navigationItem key="navigationItem" id="faO-MS-CNG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="y5s-UP-ASl">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="show" id="PuJ-s4-rf2"/>
+                                <segue destination="2S3-LG-eVX" kind="show" identifier="add" id="skB-GK-Uoj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -36,55 +39,26 @@
             </objects>
             <point key="canvasLocation" x="759" y="474"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Add&Edit-->
+        <scene sceneID="zy0-ai-Rqo">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Gun4_GroceryList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2S3-LG-eVX" customClass="ViewController" customModule="Gun4_GroceryList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="H8A-lg-VBR"/>
+                        <viewControllerLayoutGuide type="bottom" id="5wf-qk-xeD"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXP-oh-wEE">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="268" y="488" width="34" height="30"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eG-2Y-nk7">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="99" y="488" width="48" height="30"/>
-                                </variation>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="jXP-oh-wEE"/>
-                                <exclude reference="1eG-2Y-nk7"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="jXP-oh-wEE"/>
-                                <include reference="1eG-2Y-nk7"/>
-                            </mask>
-                        </variation>
+                    <view key="view" contentMode="scaleToFill" id="Ndr-Ho-250">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add&amp;Edit" id="L2N-BK-6YS">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ptp-d5-bWX"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="i1v-cm-X0x"/>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qsX-Iw-hDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1497" y="474"/>
+            <point key="canvasLocation" x="1531.5" y="467"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0tb-QY-S3J">
@@ -105,4 +79,7 @@
             <point key="canvasLocation" x="-159" y="474"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="710-SV-SVJ"/>
+    </inferredMetricsTieBreakers>
 </document>
